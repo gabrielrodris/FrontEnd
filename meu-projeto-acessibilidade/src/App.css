@@ -1,4 +1,13 @@
+.container {
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 1rem;
+}
 
+:root {
+  --brand: #2a2a72;
+  --accent: #0077b6;
+}
 .skip-link:focus {
   left: 1rem;
   top: 1rem;
@@ -35,6 +44,7 @@ nav a {
   text-decoration: underline;
 }
 
+
 .accessible-button {
   background: var(--accent);
   color: white;
@@ -44,6 +54,11 @@ nav a {
   border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
+  transition: background 0.2s;
+}
+
+.accessible-button:hover {
+  background: #023e8a;
 }
 
 .accessible-button:focus {

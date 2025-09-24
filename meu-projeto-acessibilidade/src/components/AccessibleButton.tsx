@@ -1,16 +1,27 @@
-import React from "react";
+
+
+import React, { useState } from "react";
 
 interface AccessibleButtonProps {
   label: string;
   onClick: () => void;
 }
 
-const AccessibleButton: React.FC<AccessibleButtonProps> = ({
-  label,
-  onClick,
-}) => {
+// Implementação simples usando apenas aria-pressed para indicar estado de toggle.
+const AccessibleButton: React.FC<AccessibleButtonProps> = ({ label, onClick }) => {
+  const [pressed, setPressed] = useState(false);
+
+  const handleClick = () => {
+    setPressed((prev) => !prev);
+    onClick();
+  };
+
   return (
-    <button className="acessible-button" onClick={onClick} aria-label={label}>
+    <button
+      className="accessible-button"
+      aria-pressed={pressed}
+      onClick={handleClick}
+    >
       {label}
     </button>
   );
